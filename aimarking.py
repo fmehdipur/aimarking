@@ -55,7 +55,7 @@ def read_docx(file):
 def read_text(file):
     return file.read().decode("utf-8")
 
-# --- AI Marking (Updated for openai>=1.0.0) ---
+# --- AI Marking (Updated for openai>=1.0.0 and using GPT-3.5) ---
 def generate_feedback(text, rubric, sample_level="medium"):
     prompt = f"""
 You are an experienced academic marker. Based on the following rubric and sample level ({sample_level}), mark the student's work below.
@@ -73,7 +73,7 @@ Please provide:
     try:
         client = openai.OpenAI()
         response = client.chat.completions.create(
-            model="gpt-4-turbo",
+            model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful academic marking assistant."},
                 {"role": "user", "content": prompt}
