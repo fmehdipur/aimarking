@@ -12,5 +12,5 @@ A Streamlit-based app to assist educators with AI-generated feedback and rubric-
 
 ### 1. Clone this repository
 ```bash
-git clone https://github.com/your-username/ai-marking-app.git
+git clone https://github.com/your-username/aimarking.git
 cd ai-marking-app
