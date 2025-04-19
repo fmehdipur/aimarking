@@ -55,7 +55,7 @@ def read_docx(file):
 def read_text(file):
     return file.read().decode("utf-8")
 
-# --- AI Marking ---
+# --- AI Marking (Updated for openai>=1.0.0) ---
 def generate_feedback(text, rubric, sample_level="medium"):
     prompt = f"""
 You are an experienced academic marker. Based on the following rubric and sample level ({sample_level}), mark the student's work below.
@@ -71,7 +71,8 @@ Please provide:
 3. An overall summary of the student's performance.
 """
     try:
-        response = openai.ChatCompletion.create(
+        client = openai.OpenAI()
+        response = client.chat.completions.create(
             model="gpt-4-turbo",
             messages=[
                 {"role": "system", "content": "You are a helpful academic marking assistant."},
