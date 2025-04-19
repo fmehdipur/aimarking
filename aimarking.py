@@ -12,7 +12,7 @@ st.set_page_config(page_title="AI Marking Assistant", layout="wide")
 st.title("📘 AI-Assisted Assessment Marking Tool")
 
 # --- API Key ---
-openai.api_key = st.secrets["OPENAI_API_KEY"] if "OPENAI_API_KEY" in st.secrets else os.getenv("OPENAI_API_KEY")
+openai.api_key = st.secrets["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"] if "OPENAI_API_KEY" in st.secrets else os.getenv("OPENAI_API_KEY")
 
 # --- Upload Section ---
 st.header("1. Upload Assessment Files")
